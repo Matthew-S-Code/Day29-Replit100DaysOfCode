@@ -1,0 +1,33 @@
+def colourText():
+  print("\033[33m", "This text ", 
+    "\033[35m", "should be ", 
+    "\033[32m", "in different ", 
+       "\033[0;34m", "colours", end="", sep="")
+
+def colours(colour, word):
+  if colour == "red":
+    print("\033[31m",
+     word, sep="", end="")
+  elif colour == "blue":
+    print("\033[0;34m", 
+     word, sep="", end="")
+  elif colour == "green":
+    print("\033[0;32m", 
+     word, sep="", end="")
+  else:
+    print("Almost all colours are made up of","\n", 
+         "\033[0;34m", "blue", "\n", 
+         "\033[0;32m", "green", "\n", 
+         "\033[0;31m", "and red ", end="", sep="")
+
+print("\033[1;37m", "Coloured subroutine", end="\n", sep="")
+colourText()
+print("\n")
+print("\033[0m", end="") 
+print("My text should read ", end="")
+colours("red", "red and ")
+colours("blue", "blue and ")
+colours("green", "green and ") 
+print("\033[0m", end="") 
+print("these should each be in their own colours")
+
